@@ -1,0 +1,37 @@
+<html>
+    <head><title>Login</title></head>
+    <body>
+        <form id="login">
+            <label for="un">Username:</label>
+            <input type="text" id="un" placeholder="Username">
+            <br>
+            <label for="p">Password:</label>
+            <input type="password" id="p" placeholder="Password">
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <script>
+            const loginform=document.getElementById("login");
+            loginform.addEventListener("submit",function(event){
+                event.preventDefault();
+                const ur=document.getElementById("un").value;
+                const p=document.getElementById("p").value;
+                handlelogin(ur,p);
+            })
+
+            function handlelogin(ur,p){
+                if (ur === undefined || ur === null){
+                    alert("Username cannot be empty");
+                    return;
+                }
+                if (p.length<8){
+                    alert("Password atleast must be 8 characters");
+                    return;
+                }
+                alert("Success");
+                loginform.reset();
+                return;
+            }
+        </script>
+    </body>
+</html>
